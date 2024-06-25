@@ -1,0 +1,6 @@
+ [
+    {"ModerationLabel":{"Confidence":91.28657531738281,"Name":"Violence","ParentName":""},"Timestamp":0},
+    {"ModerationLabel":{"Confidence":66.8774185180664,"Name":"Weapon Violence","ParentName":"Violence"},"Timestamp":0},
+    {"ModerationLabel":{"Confidence":91.28657531738281,"Name":"Weapons","ParentName":"Violence"},"Timestamp":0},
+    {"ModerationLabel":{"Confidence":91.39778900146484,"Name":"Violence","ParentName":""},"Timestamp":520},
+    {"ModerationLabel":{"Confidence":64.1693115234375,"Name":"Weapon Violence","ParentName":"Violence"},"Timestamp":520}]

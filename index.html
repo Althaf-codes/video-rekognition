@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload to S3</title>
+</head>
+<body>
+  <div  class="display flex justify-content: center align-items: center">
+
+    <h2>File Upload to S3</h2>
+  <form id="uploadForm" action="/api/uploads" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id='videoUpload' />
+    <button type="submit">Upload</button>
+  </form>
+
+  <video id="myVideo" width="400" height="400" style="display:none" controls>
+    Your browser does not support the video tag.
+  </video>
+  <br>
+  <button onclick="seekToTime(3)">Timestamp 1</button>
+  <button onclick="seekToTime(6)">Timestamp 2</button>
+  <button onclick="seekToTime(9)">Timestamp 3</button>
+  </div>
+  
+  <script  src="main.js">  </script>
+</body>
+</html> -->
+
+<!-- 
+<% if (locals.moderations) { %>
+
+  <table>
+    <thead>
+      <th>S.No</th>
+      <th>Label</th>
+      <th>Confidence</th>
+      <th>Timstamp</th>
+      
+    </thead>
+    <tbody>
+      <% moderations.forEach((moderation,index)=> { %>
+        <tr>
+          <td><%= index+1 %></td>
+          <td><%= moderation.ModerationLabel.Name %></td>
+          <td><%= moderation.ModerationLabel.Confidence %></td>
+          <td><%= moderation.Timestamp %></td>
+
+        </tr>
+      
+
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>  -->
+
+
+
+
+
+
+<table>
+  <thead>
+    <th>S.No</th>
+    <th>Label</th>
+    <th>Confidence</th>
+    <th>Timstamp</th>
+  </thead>
+  <tbody>
+
+  <% moderations.forEach((moderation,index)=> { %>
+  
+    <tr>
+      <td><%= index+1 %></td>
+      <td><%= moderation.ModerationLabel.Name %></td>
+      <td><%= moderation.ModerationLabel.Confidence %></td>
+     <td><%= moderation.ModerationLabel.Timestamp %></td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table> 
+
+
+<% if (locals.moderations) { %>
+
+ 
+  <table>
+    <thead  >
+      <th>S.No</th>
+      <th>Label</th>
+      <th>Confidence</th>
+      <th>Timstamp</th>
+    </thead>
+    </table>
+ 
+<% } %>
+
+
+
+
+<% if (locals.presignedUrl) { %>
+  <video id="myVideo" width="400" height="400" controls src="https://reko-project.s3.ap-south-1.amazonaws.com/uploads/partial_test.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA3GPLONTDSXP2JQL6%2F20231219%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20231219T072055Z&X-Amz-Expires=900&X-Amz-Signature=713e3101c3faa806f9ed085e492407fb0ecbddf73b7e92685d8068e7afcd5748&X-Amz-SignedHeaders=host&x-id=GetObject">
+    
+  </video>
+  <div> <br> </div>
+<% } %>
+
+
+https://reko-project.s3.ap-south-1.amazonaws.com/uploads/partial_test.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA3GPLONTDSXP2JQL6%2F20231219%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20231219T072055Z&X-Amz-Expires=900&X-Amz-Signature=713e3101c3faa806f9ed085e492407fb0ecbddf73b7e92685d8068e7afcd5748&X-Amz-SignedHeaders=host&x-id=GetObject
+
+
+
+<% if (locals.presignedUrl) { %>
+  <video id="myVideo" width="400" height="400" controls autoplay >
+    <source src="<%=presignedUrl%>" type="video/mp4">    
+    Your browser does not support the video tag.
+  </video>
+  <div> <br> </div>
+<% } %>
+
+  
